@@ -4,29 +4,41 @@
       <div class="mb-4">
         <label class="block text-primary-500 text-sm font-bold mb-2" for="email">Email</label>
         <input
-          v-model="email"
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          v-model="$v.email.$model"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+          :class="{ 'border-error': $v.email.$error }"
           id="email"
           type="text"
           placeholder="Email"
         />
+        <p v-show="$v.email.$error" class="text-error text-xs italic">
+          Please input an email address.
+        </p>
       </div>
       <div class="mb-6">
         <label class="block text-primary-500 text-sm font-bold mb-2" for="password">Password</label>
         <input
-          v-model="password"
-          class="shadow appearance-none border border-error rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+          v-model="$v.password.$model"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+          :class="{ 'border-error': $v.password.$error }"
           id="password"
           type="password"
           placeholder="*****"
         />
-        <p class="text-error text-xs italic">Please choose a password.</p>
+        <p v-show="$v.password.$error" class="text-error text-xs italic">
+          Please choose a password.
+        </p>
       </div>
       <div class="flex items-center justify-between">
         <button
-          class="bg-primary-500 hover:bg-primary-300 text-white text-sm font-bold py-1 px-3 rounded focus:outline-none focus:shadow-outline"
+          class="bg-primary-500 text-white text-sm font-bold py-1 px-3 rounded focus:outline-none focus:shadow-outline"
+          :class="{
+            'cursor-not-allowed opacity-50': $v.$invalid
+          }"
           type="submit"
-        >Sign In</button>
+        >
+          Sign In
+        </button>
       </div>
     </form>
     <p class="text-center text-gray-500 text-xs">&copy;2020 SCMP LLC.</p>
@@ -34,19 +46,29 @@
 </template>
 
 <script>
+import { required } from 'vuelidate/lib/validators';
+
 export default {
   data() {
     return {
       email: null,
-      password: null,
+      password: null
     };
   },
 
-  methods: {
-    onSubmit() {
-      console.log('wooo', this.email, this.password);
+  validations: {
+    email: {
+      required
     },
+
+    password: {
+      required
+    }
   },
+
+  methods: {
+    onSubmit() {}
+  }
 };
 </script>
 
