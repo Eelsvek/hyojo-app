@@ -2,6 +2,7 @@ module.exports = {
   purge: [],
   theme: {
     extend: {
+      backgroundColor: theme => theme('colors'),
       // https://coolors.co/353535-3c6e71-ffffff-d9d9d9-284b63
       colors: {
         black: '#000',
@@ -22,7 +23,9 @@ module.exports = {
           700: '#315b5e'
         }
       },
-      backgroundColor: theme => theme('colors')
+      fontFamily: {
+        sans: ['Overpass', 'sans-serif']
+      }
     }
   },
   variants: {},
