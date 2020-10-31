@@ -13,20 +13,20 @@ module.exports = {
         primary: {
           300: '#525252',
           500: '#353535',
-          700: '#292929'
+          700: '#292929',
         },
 
         secondary: {
           300: '#4d9093',
           500: '#3c6e71',
-          700: '#315b5e'
-        }
+          700: '#315b5e',
+        },
       },
       fontFamily: {
-        sans: ['Overpass', 'sans-serif']
-      }
-    }
+        sans: ['Overpass', 'sans-serif'],
+      },
+    },
   },
   variants: {},
-  plugins: []
+  plugins: [],
 };

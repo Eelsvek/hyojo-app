@@ -1,13 +1,18 @@
 <template>
   <div>
-    <form @submit="onSubmit" class="bg-white rounded shadow-md px-8 pt-6 pb-8 mb-4">
+    <form
+      class="bg-white rounded shadow-md px-8 pt-6 pb-8 mb-4"
+      @submit="onSubmit"
+    >
       <div class="mb-4">
-        <label class="block text-primary-500 text-sm font-bold mb-2" for="email">Email</label>
+        <label class="block text-primary-500 text-sm font-bold mb-2" for="email"
+          >Email</label
+        >
         <input
+          id="email"
           v-model="$v.email.$model"
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           :class="{ 'border-error': $v.email.$error }"
-          id="email"
           type="text"
           placeholder="Email"
         />
@@ -16,12 +21,16 @@
         </p>
       </div>
       <div class="mb-6">
-        <label class="block text-primary-500 text-sm font-bold mb-2" for="password">Password</label>
+        <label
+          class="block text-primary-500 text-sm font-bold mb-2"
+          for="password"
+          >Password</label
+        >
         <input
+          id="password"
           v-model="$v.password.$model"
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           :class="{ 'border-error': $v.password.$error }"
-          id="password"
           type="password"
           placeholder="*****"
         />
@@ -33,7 +42,7 @@
         <button
           class="bg-primary-500 text-white text-sm font-bold py-1 px-3 rounded focus:outline-none focus:shadow-outline"
           :class="{
-            'cursor-not-allowed opacity-50': $v.$invalid
+            'cursor-not-allowed opacity-50': $v.$invalid,
           }"
           type="submit"
         >
@@ -51,24 +60,24 @@ export default {
   data() {
     return {
       email: null,
-      password: null
+      password: null,
     };
   },
 
   validations: {
     email: {
       required,
-      email
+      email,
     },
 
     password: {
-      required
-    }
+      required,
+    },
   },
 
   methods: {
-    onSubmit() {}
-  }
+    onSubmit() {},
+  },
 };
 </script>
 

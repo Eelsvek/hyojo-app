@@ -1,19 +1,18 @@
 <template>
   <div>
     <MainMenu />
-    <slot></slot>
+    <slot> </slot>
   </div>
 </template>
 
 <script>
 import MainMenu from '@/components/Navigation/MainMenu';
+
 export default {
   components: {
-    MainMenu
-  }
-}
+    MainMenu,
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
