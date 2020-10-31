@@ -41,12 +41,11 @@
         </button>
       </div>
     </form>
-    <p class="text-center text-gray-500 text-xs">&copy;2020 SCMP LLC.</p>
   </div>
 </template>
 
 <script>
-import { required } from 'vuelidate/lib/validators';
+import { required, email } from 'vuelidate/lib/validators';
 
 export default {
   data() {
@@ -58,7 +57,8 @@ export default {
 
   validations: {
     email: {
-      required
+      required,
+      email
     },
 
     password: {
