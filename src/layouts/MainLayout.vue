@@ -1,11 +1,9 @@
 <template>
-  <div id="main-layout" class="flex">
-    <div class="flex flex-col">
+  <div id="main-layout">
+    <MainMenu />
+    <div class="flex">
       <Sidebar />
-    </div>
-    <div class="flex flex-1 flex-col">
-      <MainMenu />
-      <div class="p-8">
+      <div id="content" class="mt-16 p-6">
         <slot></slot>
       </div>
     </div>
@@ -24,4 +22,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#content {
+  margin-left: 14rem;
+}
+</style>

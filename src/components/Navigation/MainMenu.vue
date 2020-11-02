@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-primary-500 ">
+  <nav class="bg-primary-500 fixed top-0 inset-x-0 z-100">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-end h-16">
         <button class="mr-5 text-white">Login</button>
