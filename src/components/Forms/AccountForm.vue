@@ -1,9 +1,6 @@
 <template>
   <div>
-    <form
-      class="bg-white rounded shadow-md px-8 pt-6 pb-8 mb-4"
-      @submit="onSubmit"
-    >
+    <form @submit="onSubmit">
       <div class="mb-4">
         <label class="block text-primary-500 text-sm font-bold mb-2" for="email"
           >Email</label

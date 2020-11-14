@@ -1,8 +1,4 @@
 <template>
-  <!--
-  Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
-  Read the documentation to get started: https://tailwindui.com/documentation
--->
   <div class="fixed z-10 inset-0 overflow-y-auto">
     <div
       class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
@@ -40,7 +36,12 @@
         aria-modal="true"
         aria-labelledby="modal-headline"
       >
-        <div class="bg-white p-4 sm:p-3"></div>
+        <div class="bg-white sm:px-4 sm:py-6">
+          <header></header>
+          <main>
+            <slot></slot>
+          </main>
+        </div>
       </div>
     </div>
   </div>
@@ -49,5 +50,3 @@
 <script>
 export default {};
 </script>
-
-<style></style>

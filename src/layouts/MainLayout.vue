@@ -7,18 +7,17 @@
         <slot></slot>
       </div>
     </div>
-    <BaseModal />
+    <LoginRegisterModal />
   </div>
 </template>
 
 <script>
-import BaseModal from '@/components/Modals/BaseModal';
 import MainMenu from '@/components/Navigation/MainMenu';
 import Sidebar from '@/components/Navigation/Sidebar';
 
 export default {
   components: {
-    BaseModal,
+    LoginRegisterModal: () => import('@/components/Modals/LoginRegisterModal'),
     MainMenu,
     Sidebar,
   },
