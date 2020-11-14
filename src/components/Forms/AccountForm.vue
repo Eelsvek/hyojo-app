@@ -1,8 +1,25 @@
 <template>
   <div>
-    <form @submit="onSubmit">
+    <h1 class="text-center font-bold mb-5">{{ formTitle }}</h1>
+    <ul class="flex mb-8">
+      <li
+        class="mr-3 border-primary-500 cursor-pointer"
+        :class="{ 'border-b-2': userLogin }"
+        @click="userLogin = true"
+      >
+        Login
+      </li>
+      <li
+        class="cursor-pointer border-primary-500"
+        :class="{ 'border-b-2': !userLogin }"
+        @click="userLogin = false"
+      >
+        Register
+      </li>
+    </ul>
+    <form @submit.prevent="onSubmit">
       <div class="mb-4">
-        <label class="block text-primary-500 text-sm font-bold mb-2" for="email"
+        <label class="block text-primary-500 font-bold mb-2" for="email"
           >Email</label
         >
         <input
@@ -11,16 +28,13 @@
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           :class="{ 'border-error': $v.email.$error }"
           type="text"
-          placeholder="Email"
         />
         <p v-show="$v.email.$error" class="text-error text-xs italic">
           Please input an email address.
         </p>
       </div>
       <div class="mb-6">
-        <label
-          class="block text-primary-500 text-sm font-bold mb-2"
-          for="password"
+        <label class="block text-primary-500 font-bold mb-2" for="password"
           >Password</label
         >
         <input
@@ -29,7 +43,6 @@
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           :class="{ 'border-error': $v.password.$error }"
           type="password"
-          placeholder="*****"
         />
         <p v-show="$v.password.$error" class="text-error text-xs italic">
           Please choose a password.
@@ -37,13 +50,13 @@
       </div>
       <div class="flex items-center justify-between">
         <button
-          class="bg-primary-500 text-white text-sm font-bold py-1 px-3 rounded focus:outline-none focus:shadow-outline"
+          class="bg-secondary-500 text-white font-bold py-2 px-3 rounded focus:outline-none focus:shadow-outline w-full"
           :class="{
             'cursor-not-allowed opacity-50': $v.$invalid,
           }"
           type="submit"
         >
-          Sign In
+          {{ buttonText }}
         </button>
       </div>
     </form>
@@ -58,6 +71,7 @@ export default {
     return {
       email: null,
       password: null,
+      userLogin: true,
     };
   },
 
@@ -69,6 +83,16 @@ export default {
 
     password: {
       required,
+    },
+  },
+
+  computed: {
+    buttonText() {
+      return this.userLogin ? 'Login' : 'Register';
+    },
+
+    formTitle() {
+      return this.userLogin ? 'Login to Hyojo' : 'Register New Account';
     },
   },
 
