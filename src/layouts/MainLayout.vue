@@ -7,15 +7,18 @@
         <slot></slot>
       </div>
     </div>
+    <BaseModal />
   </div>
 </template>
 
 <script>
+import BaseModal from '@/components/Modals/BaseModal';
 import MainMenu from '@/components/Navigation/MainMenu';
 import Sidebar from '@/components/Navigation/Sidebar';
 
 export default {
   components: {
+    BaseModal,
     MainMenu,
     Sidebar,
   },
