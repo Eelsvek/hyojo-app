@@ -23,8 +23,12 @@ export default {
           url: '/',
         },
         {
-          title: 'Following',
-          url: '/directory/following',
+          title: 'Profile',
+          url: '/directory/profile',
+        },
+        {
+          title: 'Browse',
+          url: '/directory',
         },
       ],
     };
