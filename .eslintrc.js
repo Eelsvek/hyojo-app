@@ -16,6 +16,18 @@ module.exports = {
   rules: {
     'import/extensions': 'off', // File extensions checks
     'import/no-unresolved': 'off', // Check for resolving files - requires alias setup
+    'no-shadow': [
+      'error',
+      {
+        allow: ['getters', 'state'],
+      },
+    ],
+    'no-param-reassign': [
+      'error',
+      {
+        props: false,
+      },
+    ],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
   },
