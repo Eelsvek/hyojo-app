@@ -24,7 +24,7 @@ export default {
         },
         {
           title: 'Profile',
-          url: '/directory/profile',
+          url: '/profile',
         },
         {
           title: 'Browse',

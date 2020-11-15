@@ -1,5 +1,5 @@
 <template>
-  <BaseModal>
+  <BaseModal v-if="$store.state.modals.loginRegisterModal.show">
     <template #default>
       <AccountForm />
     </template>

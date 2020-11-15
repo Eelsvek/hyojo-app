@@ -66,12 +66,16 @@
 <script>
 import { required, email } from 'vuelidate/lib/validators';
 
+import { MODALS } from '@/store/types/modal-types';
+
+const { LOGIN } = MODALS;
+
 export default {
   data() {
     return {
       email: null,
       password: null,
-      userLogin: true,
+      userLogin: this.$store.state.modals.loginRegisterModal.type === LOGIN,
     };
   },
 
@@ -84,10 +88,6 @@ export default {
     password: {
       required,
     },
-  },
-
-  mounted() {
-    console.log('this', this);
   },
 
   computed: {
