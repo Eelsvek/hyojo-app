@@ -30,7 +30,7 @@
           type="text"
         />
         <p v-show="$v.email.$error" class="text-error text-xs italic">
-          Please input an email address.
+          Please input a valid email address.
         </p>
       </div>
       <div class="mb-6">
@@ -84,6 +84,10 @@ export default {
     password: {
       required,
     },
+  },
+
+  mounted() {
+    console.log('this', this);
   },
 
   computed: {

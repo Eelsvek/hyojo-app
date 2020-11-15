@@ -36,7 +36,7 @@
         aria-modal="true"
         aria-labelledby="modal-headline"
       >
-        <div class="bg-white sm:px-4 sm:py-6">
+        <div class="bg-white p-4 sm:px-4 sm:py-6">
           <header></header>
           <main>
             <slot></slot>
