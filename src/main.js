@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuelidate from 'vuelidate';
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
+import { BootstrapVue, IconsPlugin, NavPlugin } from 'bootstrap-vue';
 
 import App from './App.vue';
 import './assets/main.scss';
@@ -12,6 +12,7 @@ Vue.config.productionTip = false;
 Vue.use(Vuelidate);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
+Vue.use(NavPlugin);
 
 new Vue({
   router,

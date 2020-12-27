@@ -1,26 +1,35 @@
 <template>
-  <nav class="bg-primary-500 fixed top-0 inset-x-0 z-100">
-    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-      <div class="relative flex items-center justify-end h-16">
-        <button
-          class="mr-5 text-white"
-          @click="$store.dispatch('modals/showLoginModal')"
-        >
-          Login
-        </button>
-        <button
-          class="text-white"
-          @click="$store.dispatch('modals/showRegisterModal')"
-        >
-          Register
-        </button>
-      </div>
-    </div>
-  </nav>
+  <b-nav>
+    <b-nav-item v-for="item in navItems" :key="item.id">
+      <router-link :to="item.url">{{ item.title }}</router-link>
+    </b-nav-item>
+  </b-nav>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      navItems: [
+        {
+          id: 1,
+          title: 'Home',
+          url: '/',
+        },
+        {
+          id: 2,
+          title: 'Profile',
+          url: '/profile',
+        },
+        {
+          id: 3,
+          title: 'Browse',
+          url: '/directory',
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style></style>

@@ -1,11 +1,6 @@
-import { MODALS } from '../types/modal-types';
-
-const { LOGIN, REGISTER } = MODALS;
-
 const getDefaultState = () => ({
   loginRegisterModal: {
     show: false,
-    type: LOGIN,
   },
 });
 
@@ -28,12 +23,10 @@ export const mutations = {
 export const actions = {
   showRegisterModal({ commit }) {
     commit('setLoginRegisterModal', true);
-    commit('setLoginRegisterModalType', REGISTER);
   },
 
   showLoginModal({ commit }) {
     commit('setLoginRegisterModal', true);
-    commit('setLoginRegisterModalType', LOGIN);
   },
 };
 
