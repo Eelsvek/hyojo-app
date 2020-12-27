@@ -3,7 +3,6 @@ import Vuelidate from 'vuelidate';
 
 import App from './App.vue';
 import './assets/main.scss';
-import './assets/tailwind.scss';
 import router from './router';
 import store from './store';
 
