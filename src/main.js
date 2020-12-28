@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuelidate from 'vuelidate';
 import {
   BootstrapVue,
+  DropdownPlugin,
   IconsPlugin,
   NavPlugin,
   SidebarPlugin,
@@ -19,6 +20,7 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(NavPlugin);
 Vue.use(SidebarPlugin);
+Vue.use(DropdownPlugin);
 
 new Vue({
   router,
