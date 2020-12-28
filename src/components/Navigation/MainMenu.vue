@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" variant="primary" type="dark">
+  <b-navbar toggleable="lg" variant="dark" type="dark">
     <b-navbar-nav>
       <b-nav-item v-for="item in navItems" :key="item.id" :to="item.url">
         {{ item.title }}
@@ -7,7 +7,11 @@
     </b-navbar-nav>
     <!-- Right side of navbar -->
     <b-navbar-nav class="ml-auto">
-      <b-nav-item-dropdown right>
+      <template v-if="!loggedIn">
+        <b-button variant="dark" size="sm">Login</b-button>
+        <b-button class="ml-2" variant="warning" size="sm">Sign Up</b-button>
+      </template>
+      <b-nav-item-dropdown v-else right>
         <template #button-content>
           <b-icon icon="person-circle" variant="light" font-scale="1.5" />
         </template>
@@ -28,6 +32,7 @@ export default {
 
   data() {
     return {
+      loggedIn: false,
       navItems: [
         {
           id: 1,
