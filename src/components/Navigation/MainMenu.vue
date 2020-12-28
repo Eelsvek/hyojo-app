@@ -1,9 +1,14 @@
 <template>
-  <b-nav>
-    <b-nav-item v-for="item in navItems" :key="item.id">
-      <router-link :to="item.url">{{ item.title }}</router-link>
-    </b-nav-item>
-  </b-nav>
+  <b-navbar variant="primary" type="dark">
+    <b-navbar-nav>
+      <b-nav-item v-for="item in navItems" :key="item.id" :to="item.url">
+        {{ item.title }}
+      </b-nav-item>
+    </b-navbar-nav>
+    <b-navbar-nav class="ml-auto">
+      <b-nav-item right>User</b-nav-item>
+    </b-navbar-nav>
+  </b-navbar>
 </template>
 
 <script>
