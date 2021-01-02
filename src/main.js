@@ -4,6 +4,7 @@ import {
   BootstrapVue,
   DropdownPlugin,
   IconsPlugin,
+  ModalPlugin,
   NavPlugin,
   SidebarPlugin,
 } from 'bootstrap-vue';
@@ -18,6 +19,7 @@ Vue.config.productionTip = false;
 Vue.use(Vuelidate);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
+Vue.use(ModalPlugin);
 Vue.use(NavPlugin);
 Vue.use(SidebarPlugin);
 Vue.use(DropdownPlugin);
