@@ -24,7 +24,7 @@
             id="pw-input"
             v-model="form.password"
             type="password"
-            placeholder="Enter Password"
+            placeholder="Enter password"
             required
           ></b-form-input>
         </b-form-group>
@@ -44,16 +44,19 @@
             id="pw-input"
             v-model="form.password"
             type="password"
-            placeholder="Enter Password"
+            placeholder="Enter password"
             required
           ></b-form-input>
         </b-form-group>
-        <b-form-group label="Confirm Password" label-for="pw-input-confirm">
+        <b-form-group
+          label="Password Confirmation"
+          label-for="pw-input-confirm"
+        >
           <b-form-input
             id="pw-input-confirm"
             v-model="form.passwordConfirm"
             type="password"
-            placeholder="Enter Password"
+            placeholder="Enter password again"
             required
           ></b-form-input>
         </b-form-group>
@@ -108,7 +111,7 @@ export default {
     },
 
     title() {
-      return this.formType === LOGIN ? 'Login to Hyojo' : 'Create An Account';
+      return this.formType === LOGIN ? 'Login to Hyojo' : 'Create an Account';
     },
   },
 
