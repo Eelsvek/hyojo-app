@@ -3,13 +3,15 @@
     <MainLayout>
       <router-view />
     </MainLayout>
+    <AccountModal :value="true" />
   </div>
 </template>
 
 <script>
+import AccountModal from '@/components/Modals/AccountModal';
 import MainLayout from '@/layouts/MainLayout';
 
 export default {
-  components: { MainLayout },
+  components: { AccountModal, MainLayout },
 };
 </script>

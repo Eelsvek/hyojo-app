@@ -1,26 +1,53 @@
 <template>
-  <nav class="bg-primary-500 fixed top-0 inset-x-0 z-100">
-    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-      <div class="relative flex items-center justify-end h-16">
-        <button
-          class="mr-5 text-white"
-          @click="$store.dispatch('modals/showLoginModal')"
-        >
-          Login
-        </button>
-        <button
-          class="text-white"
-          @click="$store.dispatch('modals/showRegisterModal')"
-        >
-          Register
-        </button>
-      </div>
-    </div>
-  </nav>
+  <b-navbar toggleable="lg" variant="dark" type="dark">
+    <b-navbar-nav>
+      <b-nav-item v-for="item in navItems" :key="item.id" :to="item.url">
+        {{ item.title }}
+      </b-nav-item>
+    </b-navbar-nav>
+    <!-- Right side of navbar -->
+    <b-navbar-nav class="ml-auto">
+      <template v-if="!loggedIn">
+        <b-button variant="dark" size="sm">Login</b-button>
+        <b-button class="ml-2" variant="warning" size="sm">Sign Up</b-button>
+      </template>
+      <b-nav-item-dropdown v-else right>
+        <template #button-content>
+          <b-icon icon="person-circle" variant="light" font-scale="1.5" />
+        </template>
+        <b-dropdown-item to="/profile">Profile</b-dropdown-item>
+        <b-dropdown-item>Sign Out</b-dropdown-item>
+      </b-nav-item-dropdown>
+    </b-navbar-nav>
+  </b-navbar>
 </template>
 
 <script>
-export default {};
+import { BIcon } from 'bootstrap-vue';
+
+export default {
+  components: {
+    BIcon,
+  },
+
+  data() {
+    return {
+      loggedIn: false,
+      navItems: [
+        {
+          id: 1,
+          title: 'Home',
+          url: '/',
+        },
+        {
+          id: 3,
+          title: 'Browse',
+          url: '/directory',
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style></style>
