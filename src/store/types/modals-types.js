@@ -1,10 +1,8 @@
 import removeNamespace from '@/helpers/namespace-helpers';
 
-export const GET_ACCOUNT_MODAL_TYPE = '';
-
 export const Types = {
   getters: {
-    GET_ACCOUNT_MODAL_TYPE: 'modals/getAccountModalType',
+    GET_ACCOUNT_MODAL: 'modals/getAccountModal',
   },
   mutations: {
     RESET_ACCOUNT_MODAL: 'modals/resetLoginRegisterModal',

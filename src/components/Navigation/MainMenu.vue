@@ -8,8 +8,10 @@
     <!-- Right side of navbar -->
     <b-navbar-nav class="ml-auto">
       <template v-if="!loggedIn">
-        <b-button variant="dark" size="sm">Login</b-button>
-        <b-button class="ml-2" variant="warning" size="sm">Sign Up</b-button>
+        <b-button variant="dark" size="sm" @click="onLogin">Login</b-button>
+        <b-button class="ml-2" variant="warning" size="sm" @click="onRegister"
+          >Sign Up</b-button
+        >
       </template>
       <b-nav-item-dropdown v-else right>
         <template #button-content>
@@ -23,7 +25,10 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import { BIcon } from 'bootstrap-vue';
+
+import { Types } from '@/store/types/modals-types';
 
 export default {
   components: {
@@ -46,6 +51,13 @@ export default {
         },
       ],
     };
+  },
+
+  methods: {
+    ...mapActions({
+      onLogin: Types.actions.SHOW_LOGIN_MODAL,
+      onRegister: Types.actions.SHOW_REGISTER_MODAL,
+    }),
   },
 };
 </script>

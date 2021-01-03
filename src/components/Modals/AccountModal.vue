@@ -74,7 +74,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: LOGIN,
+      required: true,
     },
 
     value: {
