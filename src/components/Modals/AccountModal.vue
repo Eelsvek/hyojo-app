@@ -1,5 +1,5 @@
 <template>
-  <b-modal :id="ACCOUNT_MODAL_ID" :title="title" hide-footer>
+  <b-modal :id="constants.ACCOUNT_MODAL_ID" :title="title" hide-footer>
     <b-tabs class="mb-3" small>
       <b-tab
         v-for="tab in tabs"

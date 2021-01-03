@@ -54,13 +54,13 @@ export default {
   },
 
   methods: {
-    async onLogin() {
-      await this.$store.dispatch(Types.actions.SHOW_LOGIN_MODAL);
+    onLogin() {
+      this.$store.dispatch(Types.actions.SHOW_LOGIN_MODAL);
       this.$bvModal.show(ACCOUNT_MODAL_ID);
     },
 
-    async onRegister() {
-      await this.$store.dispatch(Types.actions.SHOW_REGISTER_MODAL);
+    onRegister() {
+      this.$store.dispatch(Types.actions.SHOW_REGISTER_MODAL);
       this.$bvModal.show(ACCOUNT_MODAL_ID);
     },
   },
