@@ -3,26 +3,21 @@ import { PrivateTypes } from '@/store/types/modals-types';
 
 const getDefaultState = () => ({
   accountModal: {
-    show: false,
-    type: LOGIN,
+    type: '',
   },
 });
 
 export const state = getDefaultState;
 
 export const getters = {
-  [PrivateTypes.getters.GET_ACCOUNT_MODAL]: state => {
-    return state.accountModal;
+  [PrivateTypes.getters.GET_ACCOUNT_MODAL_TYPE]: state => {
+    return state.accountModal.type;
   },
 };
 
 export const mutations = {
   [PrivateTypes.mutations.RESET_ACCOUNT_MODAL]: state => {
     Object.assign(state, getDefaultState());
-  },
-
-  [PrivateTypes.mutations.SET_ACCOUNT_MODAL]: (state, show) => {
-    state.accountModal.show = show;
   },
 
   [PrivateTypes.mutations.SET_ACCOUNT_MODAL_TYPE]: (state, type) => {
@@ -32,13 +27,15 @@ export const mutations = {
 
 export const actions = {
   [PrivateTypes.actions.SHOW_REGISTER_MODAL]: ({ commit }) => {
-    commit(PrivateTypes.mutations.SET_ACCOUNT_MODAL, true);
     commit(PrivateTypes.mutations.SET_ACCOUNT_MODAL_TYPE, REGISTER);
   },
 
   [PrivateTypes.actions.SHOW_LOGIN_MODAL]: ({ commit }) => {
-    commit(PrivateTypes.mutations.SET_ACCOUNT_MODAL, true);
     commit(PrivateTypes.mutations.SET_ACCOUNT_MODAL_TYPE, LOGIN);
+  },
+
+  [PrivateTypes.actions.HIDE_ACCOUNT_MODAL]: ({ commit }) => {
+    commit(PrivateTypes.mutations.RESET_ACCOUNT_MODAL);
   },
 };
 

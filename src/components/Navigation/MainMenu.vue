@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
 import { BIcon } from 'bootstrap-vue';
 
 import { Types } from '@/store/types/modals-types';
@@ -54,10 +53,15 @@ export default {
   },
 
   methods: {
-    ...mapActions({
-      onLogin: Types.actions.SHOW_LOGIN_MODAL,
-      onRegister: Types.actions.SHOW_REGISTER_MODAL,
-    }),
+    async onLogin() {
+      await this.$store.dispatch(Types.actions.SHOW_LOGIN_MODAL);
+      this.$bvModal.show('account-modal');
+    },
+
+    async onRegister() {
+      await this.$store.dispatch(Types.actions.SHOW_REGISTER_MODAL);
+      this.$bvModal.show('account-modal');
+    },
   },
 };
 </script>

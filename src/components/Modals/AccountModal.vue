@@ -1,15 +1,16 @@
 <template>
-  <b-modal v-model="value" :title="title" hide-footer>
+  <b-modal id="account-modal" :title="title" hide-footer>
     <b-tabs class="mb-3" small>
       <b-tab
         v-for="tab in tabs"
         :key="tab.id"
+        :active="tab.title === modalType"
         :title="tab.title"
         @click="onTabClick(tab.id)"
       ></b-tab>
     </b-tabs>
     <b-form @submit="onSubmit">
-      <template v-if="formType === constants.LOGIN">
+      <template v-if="modalType === constants.LOGIN">
         <b-form-group label="Email" label-for="email-input">
           <b-form-input
             id="email-input"
@@ -67,21 +68,13 @@
 </template>
 
 <script>
-import { LOGIN, REGISTER } from '@/constants/account-types';
+import { mapActions, mapGetters } from 'vuex';
+
+import { Types } from '@/store/types/modals-types';
+import { LOGIN } from '@/constants/account-types';
 
 export default {
   name: 'AccountModal',
-  props: {
-    type: {
-      type: String,
-      required: true,
-    },
-
-    value: {
-      type: Boolean,
-      required: true,
-    },
-  },
 
   data() {
     return {
@@ -91,7 +84,6 @@ export default {
       form: {
         email: '',
       },
-      formType: this.type,
       tabs: [
         {
           id: 1,
@@ -106,25 +98,35 @@ export default {
   },
 
   computed: {
+    ...mapGetters({
+      modalType: Types.getters.GET_ACCOUNT_MODAL_TYPE,
+    }),
+
     buttonText() {
-      return this.formType === LOGIN ? 'Login' : 'Register';
+      return this.modalType === LOGIN ? 'Login' : 'Register';
     },
 
     title() {
-      return this.formType === LOGIN ? 'Login to Hyojo' : 'Create an Account';
+      return this.modalType === LOGIN ? 'Login to Hyojo' : 'Create an Account';
     },
   },
 
   methods: {
+    ...mapActions({
+      showLoginModal: Types.actions.SHOW_LOGIN_MODAL,
+      showRegisterModal: Types.actions.SHOW_REGISTER_MODAL,
+      hideAccountModal: Types.actions.HIDE_ACCOUNT_MODAL,
+    }),
+
     onSubmit() {
       console.log('submittin');
     },
 
     onTabClick(tabId) {
       if (tabId === 1) {
-        this.formType = LOGIN;
+        this.showLoginModal();
       } else {
-        this.formType = REGISTER;
+        this.showRegisterModal();
       }
     },
   },
