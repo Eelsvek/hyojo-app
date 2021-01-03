@@ -1,4 +1,4 @@
-import { LOGIN, REGISTER } from '@/constants/account-types';
+import { LOGIN, REGISTER } from '@/constants/account-modal-types';
 import { PrivateTypes } from '@/store/types/modals-types';
 
 const getDefaultState = () => ({

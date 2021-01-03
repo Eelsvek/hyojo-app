@@ -28,6 +28,7 @@
 import { BIcon } from 'bootstrap-vue';
 
 import { Types } from '@/store/types/modals-types';
+import { ACCOUNT_MODAL_ID } from '@/constants/account-modal-types';
 
 export default {
   components: {
@@ -55,12 +56,12 @@ export default {
   methods: {
     async onLogin() {
       await this.$store.dispatch(Types.actions.SHOW_LOGIN_MODAL);
-      this.$bvModal.show('account-modal');
+      this.$bvModal.show(ACCOUNT_MODAL_ID);
     },
 
     async onRegister() {
       await this.$store.dispatch(Types.actions.SHOW_REGISTER_MODAL);
-      this.$bvModal.show('account-modal');
+      this.$bvModal.show(ACCOUNT_MODAL_ID);
     },
   },
 };

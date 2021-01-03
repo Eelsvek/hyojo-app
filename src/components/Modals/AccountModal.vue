@@ -1,5 +1,5 @@
 <template>
-  <b-modal id="account-modal" :title="title" hide-footer>
+  <b-modal :id="ACCOUNT_MODAL_ID" :title="title" hide-footer>
     <b-tabs class="mb-3" small>
       <b-tab
         v-for="tab in tabs"
@@ -71,7 +71,7 @@
 import { mapActions, mapGetters } from 'vuex';
 
 import { Types } from '@/store/types/modals-types';
-import { LOGIN } from '@/constants/account-types';
+import { LOGIN, ACCOUNT_MODAL_ID } from '@/constants/account-modal-types';
 
 export default {
   name: 'AccountModal',
@@ -79,6 +79,7 @@ export default {
   data() {
     return {
       constants: {
+        ACCOUNT_MODAL_ID,
         LOGIN,
       },
       form: {
