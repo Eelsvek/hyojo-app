@@ -84,6 +84,8 @@ export default {
       },
       form: {
         email: '',
+        password: '',
+        passwordConfirm: '',
       },
       tabs: [
         {
@@ -116,11 +118,10 @@ export default {
     ...mapActions({
       showLoginModal: Types.actions.SHOW_LOGIN_MODAL,
       showRegisterModal: Types.actions.SHOW_REGISTER_MODAL,
-      hideAccountModal: Types.actions.HIDE_ACCOUNT_MODAL,
     }),
 
     onSubmit() {
-      console.log('submittin');
+      console.log('submitting');
     },
 
     onTabClick(tabId) {

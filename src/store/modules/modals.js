@@ -33,10 +33,6 @@ export const actions = {
   [PrivateTypes.actions.SHOW_LOGIN_MODAL]: ({ commit }) => {
     commit(PrivateTypes.mutations.SET_ACCOUNT_MODAL_TYPE, LOGIN);
   },
-
-  [PrivateTypes.actions.HIDE_ACCOUNT_MODAL]: ({ commit }) => {
-    commit(PrivateTypes.mutations.RESET_ACCOUNT_MODAL);
-  },
 };
 
 export default {
