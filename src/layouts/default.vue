@@ -1,7 +1,7 @@
 <template>
   <div id="main-layout">
     <MainMenu />
-    <nuxt></nuxt>
+    <nuxt />
     <AccountModal />
   </div>
 </template>

@@ -2,7 +2,7 @@
 node_modules
 /dist
 .nuxt
-
+.env
 
 # local env files
 .env.local
