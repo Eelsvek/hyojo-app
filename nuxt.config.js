@@ -19,9 +19,7 @@ export default {
     ],
   },
   dev: !IS_PRODUCTION,
-  env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-  },
+  env: {},
   modules: ['bootstrap-vue/nuxt'],
   plugins: [{ src: '@/plugins/vuelidate' }],
   rootDir: './',
