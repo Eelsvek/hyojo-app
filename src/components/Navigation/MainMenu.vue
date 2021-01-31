@@ -28,8 +28,7 @@
 import { mapActions } from 'vuex';
 import { BIcon } from 'bootstrap-vue';
 
-import { Types } from '@/constants/store/modals-types';
-import { ACCOUNT_MODAL_ID } from '@/constants/account-modal-types';
+import { Types, ACCOUNT_MODAL_ID } from '@/constants/store/modals';
 
 export default {
   components: {
