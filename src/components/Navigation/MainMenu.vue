@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" variant="dark" type="dark">
+  <b-navbar toggleable="lg" variant="secondary">
     <b-navbar-nav>
       <b-nav-item v-for="item in navItems" :key="item.id" :to="item.url">
         {{ item.title }}
@@ -28,8 +28,7 @@
 import { mapActions } from 'vuex';
 import { BIcon } from 'bootstrap-vue';
 
-import { Types } from '@/store/types/modals-types';
-import { ACCOUNT_MODAL_ID } from '@/constants/account-modal-types';
+import { Types, ACCOUNT_MODAL_ID } from '@/constants/store/modals';
 
 export default {
   components: {
