@@ -11,6 +11,7 @@ export default {
       'FormGroupPlugin',
       'FormInputPlugin',
       'IconsPlugin',
+      'LayoutPlugin', // TODO - delete this, maybe...
       'ModalPlugin',
       'NavPlugin',
       'NavbarPlugin',

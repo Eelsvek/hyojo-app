@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" variant="secondary">
+  <b-navbar toggleable="lg" variant="white">
     <b-navbar-nav>
       <b-nav-item v-for="item in navItems" :key="item.id" :to="item.url">
         {{ item.title }}
