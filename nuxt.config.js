@@ -18,6 +18,7 @@ export default {
       'TabsPlugin',
     ],
   },
+  css: ['@/assets/main.scss'],
   dev: !IS_PRODUCTION,
   env: {},
   modules: ['bootstrap-vue/nuxt'],
