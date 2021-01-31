@@ -11,9 +11,7 @@ import {
   TabsPlugin,
 } from 'bootstrap-vue';
 
-import App from './App.vue';
 import './assets/main.scss';
-import store from './store';
 
 Vue.config.productionTip = false;
 
@@ -26,8 +24,3 @@ Vue.use(ModalPlugin);
 Vue.use(NavPlugin);
 Vue.use(SidebarPlugin);
 Vue.use(TabsPlugin);
-
-new Vue({
-  store,
-  render: h => h(App),
-}).$mount('#app');

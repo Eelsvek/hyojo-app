@@ -70,7 +70,7 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 
-import { Types } from '@/store/types/modals-types';
+import { Types } from '@/constants/store/modals-types';
 import { LOGIN, ACCOUNT_MODAL_ID } from '@/constants/account-modal-types';
 
 export default {

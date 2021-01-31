@@ -1,5 +1,5 @@
 import { LOGIN, REGISTER } from '@/constants/account-modal-types';
-import { PrivateTypes } from '@/store/types/modals-types';
+import { PrivateTypes } from '@/constants/store/modals-types';
 
 const getDefaultState = () => ({
   accountModal: {
@@ -33,12 +33,4 @@ export const actions = {
   [PrivateTypes.actions.SHOW_LOGIN_MODAL]: ({ commit }) => {
     commit(PrivateTypes.mutations.SET_ACCOUNT_MODAL_TYPE, LOGIN);
   },
-};
-
-export default {
-  namespaced: true,
-  actions,
-  getters,
-  mutations,
-  state,
 };
