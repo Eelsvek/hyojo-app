@@ -13,7 +13,6 @@ import {
 
 import App from './App.vue';
 import './assets/main.scss';
-import router from './router';
 import store from './store';
 
 Vue.config.productionTip = false;
@@ -29,7 +28,6 @@ Vue.use(SidebarPlugin);
 Vue.use(TabsPlugin);
 
 new Vue({
-  router,
   store,
   render: h => h(App),
 }).$mount('#app');
