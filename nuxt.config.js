@@ -1,11 +1,15 @@
 export default {
   bootstrapVue: {
     componentPlugins: [
+      'ButtonPlugin',
       'DropdownPlugin',
       'FormPlugin',
+      'FormGroupPlugin',
+      'FormInputPlugin',
       'IconsPlugin',
       'ModalPlugin',
       'NavPlugin',
+      'NavbarPlugin',
       'SidebarPlugin',
       'TabsPlugin',
     ],
